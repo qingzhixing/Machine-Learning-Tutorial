@@ -59,3 +59,38 @@ z = torch.arange(5, 13)
 #            [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
 #            [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]])
 print(x.reshape(-1, 1) + x, "\n")
+
+
+# Practice
+X = torch.arange(12, dtype=torch.float32).reshape((3, 4))
+print("X:\n", X, "\n")
+
+Y = torch.tensor([[2.0, 1, 4, 3], [1, 2, 3, 4], [4, 3, 2, 1]])
+print("Y:\n", Y, "\n")
+
+catted_dim0, catted_dim1 = torch.cat((X, Y), dim=0), torch.cat((X, Y), dim=1)
+print("Catted_dim0:\n", catted_dim0, "\n")
+print("Catted_dim1:\n", catted_dim1, "\n")
+
+print("X==Y:\n", X == Y, "\n")
+
+print("X<Y:\n", X < Y, "\n")
+
+print("X>Y:\n", X > Y, "\n")
+
+tensor_3d = torch.zeros((2, 2, 2), dtype=torch.float32)
+print("tensor_3d:\n", tensor_3d, "\n")
+
+tensor_3d[0, 1, 1] = 1
+print("tensor_3d:\n", tensor_3d, "\n")
+
+tensor_2d = torch.randn((2, 3), dtype=torch.float32)
+print("tensor_2d:\n", tensor_2d, "\n")
+
+# 张量的运算
+# print("tensor_2d + tensor_3d:\n", tensor_2d + tensor_3d, "\n")
+#                                   ^^^^^^^^^^^^^^^^^^^
+# Traceback (most recent call last):
+#   File "x\Machine-Learning-Tutorial\Chapter 0 Preliminaries\ndarray_use.py", line 91, in <module>
+#     print("tensor_2d + tensor_3d:\n", tensor_2d + tensor_3d, "\n")
+# RuntimeError: The size of tensor a (3) must match the size of tensor b (2) at non-singleton dimension 2

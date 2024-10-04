@@ -2,3 +2,8 @@
 .vscode/
 d2l-zh/
 Deep_Learning/
+*/__pycache__/
+*.pyc
+*.pyo
+*.log
+*.csv
